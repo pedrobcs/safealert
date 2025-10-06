@@ -31,10 +31,11 @@ const results = [];
 for (const contact of contacts) {
   try {
     const message = await client.messages.create({
-      body: contact.message,
-      from: process.env.TWILIO_PHONE_NUMBER,
-      to: contact.phone
-    });
+  body: contact.message,
+  from: process.env.TWILIO_PHONE_NUMBER, // e.g. "whatsapp:+14155238886"
+  to: `whatsapp:${contact.phone}`        // e.g. "whatsapp:+15551234567"
+});
+
     results.push({ sid: message.sid, to: contact.phone, success: true });
   } catch (error) {
     results.push({ to: contact.phone, success: false, error: error.message });
