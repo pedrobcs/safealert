@@ -1,8 +1,8 @@
 {
-  "name": "safealert-backend",
+  "name": "safealert",
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "twilio": "^4.0.0"
+    "twilio": "^4.20.0"
   }
 }
